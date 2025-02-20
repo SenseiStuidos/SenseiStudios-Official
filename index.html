@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SenseiWeb</title>
+    <link rel="icon" href="logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(90deg, #0059ff, #00ffee);
+    color: white;
+}
+
+nav .logo {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+nav .theme-toggle {
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+}
+
+.hero {
+    margin-top: 80px;
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(90deg, #0059ff, #00ffee);
+    color: white;
+}
+
+.main-heading {
+    font-size: 48px;
+    font-weight: 600;
+}
+
+.cards {
+    display: flex;
+    justify-content: space-around;
+    margin: 40px auto;
+    max-width: 1200px;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 280px;
+    margin: 20px;
+    border: 2px solid #ddd;
+    border-radius: 11px;
+    overflow: hidden;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+}
+
+.card-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.card-content {
+    padding: 20px;
+    background: white;
+}
+
+.card-content h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.card-content p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.card-link:hover .card-content {
+    background: linear-gradient(#00C9FF , #92FE9D);
+    color: white;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+    margin: 0 20px;
+    padding: 10px 20px;
+    border: 2px solid #ddd;
+    border-radius: 11px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.social-link img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.social-link:hover {
+    background: linear-gradient(90deg, #0059ff, #00ffee);
+    color: white;
+}
+
+.social-link.discord-link:hover {
+    background: #7289da;
+}
+
+.social-link.youtube-link:hover {
+    background: #ff0000;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #333;
+    color: white;
+}
+
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: white;
+}
+
+body.dark-mode nav {
+    background: linear-gradient(90deg, #3a3a3a, #5a5a5a);
+}
+
+body.dark-mode .hero {
+    background: linear-gradient(45deg, #333, #555);
+}
+
+body.dark-mode .card {
+    border-color: #444;
+    background: #222;
+}
+
+body.dark-mode .card-content {
+    background: #333;
+    color: white;
+}
+
+body.dark-mode .card-link:hover .card-content {
+    background: linear-gradient(90deg, #3a3a3a, #555);
+}
+
+body.dark-mode .social-link {
+    border-color: #555;
+    color: white;
+}
+
+body.dark-mode .social-link.discord-link:hover {
+    background: #2c2f36;
+}
+
+body.dark-mode .social-link.youtube-link:hover {
+    background: #cc0000;
+}
+#icon {
+    font-size:30px;
+}
+#youtube {
+    font-size: 30px;
+}
+    </style>
+</head>
+
+<body>
+  
+    <header>
+        <nav>
+            <div class="logo">SenseiStudios</div>
+            <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1 class="main-heading">Welcome to the SenseiStudios</h1>
+        </section>
+
+        <section class="cards">
+            <div class="card">
+                <a href="https://senseistuidos.github.io/Sensei-s-Color-Library/" class="card-link">
+                    <div class="card-content">
+                        <h3>Sensei's Color Library</h3>
+                        <p>Sensei's Color Library: Explore 100K+ color shades with hex codes. Easily browse, copy, and use them for free in your designs, websites, and creative projects.</p>
+                    </div>
+                </a>
+            </div>
+            <div class="card">
+                <a href="https://senseistuidos.github.io/discordqr/" class="card-link">
+                    <div class="card-content">
+                        <h3>DIscord Qr Generator</h3>
+                        <p> Generate free QR codes for your Discord server invite link. Share your community easily with a simple scan, making it hassle-free to grow your server.</p>
+                    </div>
+                </a>
+
+            </div>
+            <div class="card">
+                <a href="https://senseistuidos.github.io/Gradient-Maker/" class="card-link">
+                    <div class="card-content">
+                        <h3>Free Gradient Generator</h3>
+                        <p>Create custom gradients for Discord role colors, embeds, and more with an easy-to-use UI. Get hex codes instantly for seamless integration in your projects.</p>
+                    </div>  
+                </a>
+            </div>
+            <div class="card">
+                <a href="https://senseistuidos.github.io/Color-Preview/" class="card-link">
+                    <div class="card-content">
+                        <h3>Colo Shade Preview</h3>
+                        <p>Enter any hex code to instantly preview its shade! Created by SenseiStudios, this tool makes color visualization and comparison simple for your projects and designs.</p>
+                    </div>  
+                </a>
+            </div>
+
+        </section>
+
+        <section class="social-links">
+            <a href="https://discord.gg/n5Y9AYNsNN" class="social-link discord-link">
+               
+                <i class="fa-brands fa-discord" id="icon"></i>
+            </a>
+            <a href="https://www.youtube.com/@SenseiLegend066" class="social-link youtube-link">
+               
+                <i class="fa-brands fa-youtube" id="youtube"></i>
+            </a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 SenseiStudios</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        function toggleTheme() {
+    document.body.classList.toggle("dark-mode");
+
+    const themeButton = document.querySelector(".theme-toggle");
+    if (document.body.classList.contains("dark-mode")) {
+        themeButton.textContent = "🌞";
+    } else {
+        themeButton.textContent = "🌙";
+    }
+}
+// Select all anchor tags
+const links = document.querySelectorAll('a');
+
+// Loop through each link and add target="_blank"
+links.forEach(link => {
+  link.setAttribute('target', '_blank');
+});
+
+    </script>
+</body>
+
+</html>

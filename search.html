@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradient Search</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(to right, darkblue, skyblue);
+            color: white;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        .search-container {
+            margin: 50px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        input {
+            padding: 10px;
+            width: 280px;
+            border: none;
+            border-radius: 20px 0 0 20px;
+            background: linear-gradient(to right, cyan, lightgreen);
+            font-size: 18px;
+            text-align: center;
+            outline: none;
+        }
+        button {
+            padding: 10px;
+            border: none;
+            border-radius: 0 20px 20px 0;
+            background: linear-gradient(to right, rgb(255, 0, 225), rgb(255, 132, 0));
+            font-size: 18px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+        button:hover {
+            background: linear-gradient(to right, rgb(148, 4, 131), rgb(136, 71, 2)));
+        }
+        .article {
+            background: linear-gradient(to right, orange, yellow);
+            padding: 20px;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 10px;
+        }
+        .hidden {
+            display: none;
+        }
+        .not-found {
+            background: linear-gradient(to right, purple, pink);
+            padding: 10px;
+            border-radius: 5px;
+            display: none;
+            margin-top: 20px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: black;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+        .btn:hover {
+            transform: scale(1.1);
+        } 
+        @media (max-width:361px) {
+            input {
+            padding: 10px;
+            width: 180px;
+            border: none;
+            border-radius: 20px 0 0 20px;
+            background: linear-gradient(to right, cyan, lightgreen);
+            font-size: 18px;
+            text-align: center;
+            outline: none;
+        }
+        }
+       h1 {
+        font-size: 4vw; /* Responsive font size */
+        font-weight: 900;
+            background: linear-gradient(to right, rgb(30, 255, 0), rgb(255, 255, 1));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-family: sans-serif;
+            font-weight:;
+            text-transform: uppercase;
+            font-size:40px;
+
+       }
+
+    </style>
+</head>
+<body>
+    
+    <h1>Search For Gamng Tutorials</h1>
+  
+    
+    <div class="search-container">
+        <input type="text" id="searchBox" placeholder="Enter Number Tag">
+        <button onclick="searchArticle()">🔍</button>
+    </div>
+    
+    <div id="articles">
+   
+        <div class="article hidden" data-tag="369963">
+            <h2>Animated Texture Pack</h2>
+            <p>The Links Of The Video Animated Texture Packs</p>
+            <a href="https://cyan-faustine-13.tiiny.site/" class="btn">Read More</a>
+        </div>
+        <!-- Add more articles here with different data-tag values -->
+    </div>
+    
+    <div id="notFound" class="not-found"><h1>Wrong KeyWord Entered</h1></div>
+    
+    <script>
+        function searchArticle() {
+            var input = document.getElementById('searchBox').value;
+            var articles = document.querySelectorAll('.article');
+            var found = false;
+            
+            articles.forEach(article => {
+                if (article.getAttribute('data-tag') === input) {
+                    article.classList.remove('hidden');
+                    found = true;
+                } else {
+                    article.classList.add('hidden');
+                }
+            });
+            
+            var notFoundMessage = document.getElementById('notFound');
+            if (!found) {
+                notFoundMessage.style.display = 'block';
+            } else {
+                notFoundMessage.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
